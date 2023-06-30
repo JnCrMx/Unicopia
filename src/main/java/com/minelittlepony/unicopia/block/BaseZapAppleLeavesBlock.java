@@ -104,6 +104,10 @@ public class BaseZapAppleLeavesBlock extends LeavesBlock implements TintedBlock 
     }
 
     static void onStageChanged(ZapAppleStageStore store, ZapAppleStageStore.Stage stage, ServerWorld world, BlockState state, BlockPos pos, Random random) {
+        if(true) {
+            return;
+        }
+
         boolean mustFruit = Random.create(state.getRenderingSeed(pos)).nextInt(5) < 2;
         BlockState below = world.getBlockState(pos.down());
 
