@@ -37,7 +37,7 @@ public class FriendshipBraceletItem extends WearableItem implements DyeableItem,
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
 
-        if (!isSigned(stack) && EquinePredicates.PLAYER_UNICORN.test(player)) {
+        if (!isSigned(stack) && (EquinePredicates.PLAYER_UNICORN.test(player) || EquinePredicates.PLAYER_PEGASUS.test(player))) {
             player.setCurrentHand(hand);
 
             ItemStack result = stack.copy();
